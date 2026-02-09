@@ -1,18 +1,19 @@
-# 🖥️ Backend – ScoreHub
+#  Backend – ScoreHub
 
 Flask API, ki upravlja igralce, XP/level sistem, dnevne nagrade ter hero/battle mehaniko za Card Battle igro (za desktop client).
 
 ---
 
-## 🚀 Zagon backend strežnika
+##  Zagon backend strežnika
 V terminalu:
+```bash
 cd backend
 python app.py
-
+```
 Backend teče na:
 http://127.0.0.1:5001
 
-## 📌 Glavne funkcije API-ja
+##  Glavne funkcije API-ja
 - **/players** – pridobi vse igralce  
 - **POST /players** – dodaj novega igralca  
 - **PUT /players/<id>/score** – spremeni rezultat  
@@ -24,21 +25,22 @@ http://127.0.0.1:5001
 
 ---
 
-## 📁 Struktura
+##  Struktura
+```text
 backend/
 │── app.py
 │── models.py
 │── database.py
 └── README.md
-
-## 🛠 Uporabljene tehnologije
+```
+##  Uporabljene tehnologije
 - Python 3 + Flask  
 - SQLAlchemy ORM  
 - SQLite baza  
 - CORS za dostop iz web clienta  
 
 
-## ⚠️ Opombe
+##  Opombe
 - Bitke se hranijo v RAM-u (BATTLES dict).  
 - Desktop client uporablja celoten battle sistem.  
 - Web client uporablja samo `/players` podatke (brez bitk).
