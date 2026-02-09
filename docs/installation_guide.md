@@ -1,4 +1,4 @@
-@"
+
 # Installation Guide
 
 ## 1. Backend Setup
@@ -22,4 +22,4 @@ Open:
 web_client/index.html
 ```
 in any browser (Chrome recommended).
-"@ | Set-Content docs/installation_guide.md
+
