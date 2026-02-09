@@ -1,14 +1,14 @@
 
-# Installation Guide
+# Inštalacija
 
-## 1. Backend Setup
-Open PowerShell:
+## 1. Nastavitev backenda
+Odpri PowerShell:
 ```bash
 cd backend
 pip install -r requirements.txt
 python app.py
 ```
-Backend runs at:
+Backend dela na:
 http://127.0.0.1:5001
 
 ## 2. Desktop Client
@@ -17,9 +17,9 @@ cd desktop_client
 python client.py
 ```
 ## 3. Web Client
-Open:
+Odpri:
 ```text
 web_client/index.html
 ```
-in any browser (Chrome recommended).
+v kateremkoli brskalniku (priporočeno: Chrome).
 
