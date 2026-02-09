@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScoreHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: #0d0d0d;
+            color: #e3e3e3;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #00eaff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px #00eaff;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .tabs button {
+            padding: 12px 20px;
+            margin: 0 10px;
+            border: none;
+            background: #1a1a1a;
+            color: #00eaff;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 0 6px #00eaff;
+        }
+
+        .tabs button:hover {
+            background: #00eaff;
+            color: black;
+            box-shadow: 0 0 15px #00eaff;
+        }
+
+        .content {
+            background: #141414;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0 0 10px #00eaff55;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #00eaff;
+            background: #0d0d0d;
+            color: #e3e3e3;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border: none;
+            background: #00eaff;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #00d0ff;
+            box-shadow: 0 0 10px #00eaff;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-info {
+            font-size: 18px;
+        }
+
+        .actions button {
+            margin-left: 8px;
+            padding: 5px 10px;
+            font-size: 13px;
+        }
+
+        .log {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0,255,255,0.1);
+    border: 1px solid #0ff;
+    border-radius: 8px;
+}
+.log-entry {
+    color: #0ff;
+    margin-bottom: 8px;
+    font-family: monospace;
+}
+
+    </style>
+</head>
+
+<body>
+
+<h1>SCOREHUB</h1>
+
+<div class="tabs">
+    <button onclick="showTab('players')">Players</button>
+    <button onclick="showTab('leaderboard')">Leaderboard</button>
+    <button onclick="showTab('chart')">Score Chart</button>
+</div>
+
+<!-- PLAYERS TAB -->
+<div id="players" class="content visible">
+    <h2>Players</h2>
+
+    <input id="playerName" placeholder="Name">
+    <button class="btn" onclick="addPlayer()">Add Player</button>
+    <button class="btn" onclick="loadPlayers()">Refresh</button>
+    <ul id="player-list"></ul>
+    <div id="quest-log" class="log"></div>
+</div>
+
+<!-- LEADERBOARD TAB -->
+<div id="leaderboard" class="content">
+    <h2>Leaderboard</h2>
+    <ol id="leaderboard-list"></ol>
+</div>
+
+<!-- CHART TAB -->
+<div id="chart" class="content">
+    <h2>Score Chart</h2>
+    <canvas id="scoreChart"></canvas>
+</div>
+
+<script src="script.js"></script>
+
+<div id="popup" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background: #00eaff;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #00eaff;
+    display: none;
+    z-index: 9999;
+"></div>
+
+
+</body>
+</html>
